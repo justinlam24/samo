@@ -1,6 +1,7 @@
 from fpgaconvnet.models.network.Network import Network
 from fpgaconvnet.models.partition.Partition import Partition
 import fpgaconvnet.tools.graphs as graphs
+import os
 
 def export(network, model_path, output_path):
 
@@ -26,4 +27,9 @@ def export(network, model_path, output_path):
     fpgaconvnet_net.update_partitions()
 
     # generate the output configuration
-    fpgaconvnet_net.save_all_partitions(output_path)
+    # save_all_partitions expects a file path, not a directory
+    if os.path.isdir(output_path):
+        output_file = os.path.join(output_path, "config.json")
+    else:
+        output_file = output_path
+    fpgaconvnet_net.save_all_partitions(output_file)

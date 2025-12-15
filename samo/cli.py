@@ -44,6 +44,7 @@ import numpy as np
 from samo.optimiser.annealing import SimulatedAnnealing
 from samo.optimiser.rule import RuleBased
 from samo.optimiser.brute import BruteForce
+from samo.optimiser.genetic import GeneticAlgorithm
 
 def main(args):
 
@@ -60,7 +61,7 @@ def main(args):
             help="hardware platform details (.json)")
     parser.add_argument("-o", "--output-path", metavar="PATH", required=True,
             help="output path for the optimised model (.json, .onnx)")
-    parser.add_argument("--optimiser", choices=["brute", "annealing", "init", "rule"], required=False, default="annealing",
+    parser.add_argument("--optimiser", choices=["brute", "annealing", "init", "rule", "genetic"], required=False, default="annealing",
             help="optimiser to use")
     parser.add_argument('--objective', choices=['throughput','latency'], required=False, default="latency", help='Optimiser objective')
     parser.add_argument("--enable_reconf", choices=["true", "false"], required=False, default="true", help="multiple partitions")
@@ -118,6 +119,8 @@ def main(args):
         opt = RuleBased(graph)
     elif args.optimiser == "brute":
         opt = BruteForce(graph)
+    elif args.optimiser == "genetic":
+        opt = GeneticAlgorithm(graph)
     elif args.optimiser == "init":
         graph.summary()
         exporter.export(graph, args.model, args.output_path)
