@@ -1,0 +1,11 @@
+model_name,domain,Successes,Total_Runs,success_<lambda_0>,Avg_Throughput,Max_Throughput,Avg_Partitions
+compact_net,image_classification,12,12,100.0%,0.000316,0.001022,4.0
+deep_narrow,image_classification,3,12,25.0%,0.0,0.0,8.5
+dense_seg,semantic_segmentation,3,12,25.0%,1e-06,4e-06,3.0
+detection_backbone,object_detection,12,12,100.0%,0.0,0.0,21.0
+medical_encoder,medical_imaging,12,12,100.0%,0.0,0.0,20.25
+mobile_style,object_detection,3,12,25.0%,0.0,0.0,13.0
+multiscale_medical,medical_imaging,12,12,100.0%,1.4e-05,4.8e-05,7.0
+segmentation_encoder,semantic_segmentation,3,12,25.0%,0.0,0.0,7.25
+srcnn,super_resolution,12,12,100.0%,1.1e-05,3.3e-05,2.75
+vdsr,super_resolution,12,12,100.0%,1e-06,3e-06,30.0

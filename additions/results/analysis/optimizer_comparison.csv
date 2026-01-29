@@ -1,0 +1,21 @@
+model_name,optimizer,Successes,success_<lambda_0>,Best_Throughput,Avg_Runtime_s
+compact_net,Rule-Based,3,100.0%,0.001022,57.622534
+compact_net,Simulated Annealing,9,100.0%,0.000134,39.270841
+deep_narrow,Rule-Based,3,100.0%,0.0,27.071915
+deep_narrow,Simulated Annealing,0,0.0%,0.0,4.10866
+dense_seg,Rule-Based,3,100.0%,4e-06,212.556161
+dense_seg,Simulated Annealing,0,0.0%,0.0,1.539299
+detection_backbone,Rule-Based,3,100.0%,0.0,15.7683
+detection_backbone,Simulated Annealing,9,100.0%,0.0,53.380927
+medical_encoder,Rule-Based,3,100.0%,0.0,22.415104
+medical_encoder,Simulated Annealing,9,100.0%,0.0,52.341029
+mobile_style,Rule-Based,3,100.0%,0.0,175.50679
+mobile_style,Simulated Annealing,0,0.0%,0.0,2.656446
+multiscale_medical,Rule-Based,3,100.0%,4.8e-05,42.365222
+multiscale_medical,Simulated Annealing,9,100.0%,1e-05,46.159487
+segmentation_encoder,Rule-Based,3,100.0%,0.0,27.148574
+segmentation_encoder,Simulated Annealing,0,0.0%,0.0,1.546533
+srcnn,Rule-Based,3,100.0%,3.3e-05,2.523708
+srcnn,Simulated Annealing,9,100.0%,1.7e-05,23.209103
+vdsr,Rule-Based,3,100.0%,3e-06,174.187672
+vdsr,Simulated Annealing,9,100.0%,0.0,87.194215

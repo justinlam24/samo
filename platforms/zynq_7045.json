@@ -1,0 +1,12 @@
+{
+  "name": "zynq_7045",
+  "part": "xc7z045ffg900-2",
+  "resources": {
+    "DSP": 900,
+    "BRAM": 545,
+    "FF": 218600,
+    "LUT": 218600
+  },
+  "bandwidth": 1024.0,
+  "reconf_time": 50000
+}

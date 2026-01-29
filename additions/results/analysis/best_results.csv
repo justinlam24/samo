@@ -1,0 +1,11 @@
+,model_name,domain,optimizer,temperature,final_throughput,total_partitions,final_DSP,final_BRAM,final_LUT,final_FF
+12,compact_net,image_classification,Rule-Based,,0.0010217922747395,2,584,1082,239926,309180
+108,multiscale_medical,medical_imaging,Rule-Based,,4.775959729107564e-05,7,1673,2536,627238,784325
+72,srcnn,super_resolution,Rule-Based,,3.2524741164044216e-05,3,1132,1478,133682,157506
+60,dense_seg,semantic_segmentation,Rule-Based,,3.6378484407403992e-06,12,4383,5489,1658356,2022246
+84,vdsr,super_resolution,Rule-Based,,2.678899414359102e-06,19,5544,7404,1634844,1962585
+96,medical_encoder,medical_imaging,Rule-Based,,3.7524105590968187e-07,18,9,1312,46899,61722
+36,mobile_style,object_detection,Rule-Based,,2.0391855201632866e-07,52,26,4327,146989,195835
+24,detection_backbone,object_detection,Rule-Based,,4.979398308891161e-09,21,9,5164,59066,77176
+0,deep_narrow,image_classification,Rule-Based,,3.233605886976832e-09,34,15,134628,98383,130575
+48,segmentation_encoder,semantic_segmentation,Rule-Based,,6.398496016783025e-10,29,13,10828,87315,113592

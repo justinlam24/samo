@@ -1,0 +1,3 @@
+optimizer,Successes,Total_Runs,success_<lambda_0>,Avg_Throughput,Median_Throughput,Max_Throughput,Avg_Runtime_s,Median_Runtime_s,Avg_Partitions
+Rule-Based,30,30,100.0%,0.000111,2e-06,0.001022,75.716598,34.707627,19.7
+Simulated Annealing,54,90,60.0%,9e-06,0.0,0.000134,31.140654,29.057172,9.0

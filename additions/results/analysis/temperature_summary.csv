@@ -1,0 +1,4 @@
+temperature,Successes,Total_Runs,success_<lambda_0>,Avg_Throughput,Max_Throughput,Avg_Runtime_s,Avg_Folding_Accepted,Avg_Partition_Accepted
+10.0,18,30,60.0%,8e-06,0.000134,28.405362,2826.633333,313.366667
+20.0,18,30,60.0%,9e-06,0.00013,31.306476,3026.866667,333.133333
+50.0,18,30,60.0%,9e-06,0.000117,33.710123,3385.166667,371.5
