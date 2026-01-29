@@ -22,7 +22,14 @@ class RuleBased:
     def optimise_single_partition(self, partition_index):
         # print(f"Partition {partition_index}:\n------------\n")
 
-        if not self.network.partitions[partition_index].check_constraints():
+        partition = self.network.partitions[partition_index]
+        
+        # Initialize merge flags to prevent AttributeError later
+        # These will be set properly if optimization succeeds
+        partition.try_merge_prev = False
+        partition.try_merge_next = False
+        
+        if not partition.check_constraints():
             return False
 
         step = True

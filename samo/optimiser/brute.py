@@ -68,9 +68,11 @@ class BruteForce:
             if self.network.partitions[0].nodes[layer]["hw"].constraints["divisible_inter_folding"] and self.network.partitions[0].out_degree(layer) > 0:
                 configurations = filter(lambda x,i=i: max(x[i][1], x[i+1][0]) % min(x[i][1], x[i+1][0]) == 0, configurations)
 
-        size = 0
-        for _ in tqdm(copy.deepcopy(configurations), desc="counting space size"):
-            size += 1
+        # Convert filter iterator to list with progress tracking
+        print("Building filtered configuration list...")
+        configurations = list(tqdm(configurations, desc="filtering configurations"))
+        size = len(configurations)
+        print(f"filtered configuration space size : {size}")
 
         network_init = copy.deepcopy(self.network)
 

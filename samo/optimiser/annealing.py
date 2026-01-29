@@ -85,7 +85,14 @@ class SimulatedAnnealing:
             pbar.set_description(desc=f"simulated annealing iterations (T={self.T:.3f})")
 
             # get the throughput of the current network state
-            cost = self.network.eval_cost()
+            try:
+                cost = self.network.eval_cost()
+            except (AttributeError, ZeroDivisionError, KeyError) as e:
+                # If cost evaluation fails (e.g., library bugs, division by zero),
+                # treat as invalid configuration and continue
+                # This can happen with certain layer configurations in fpgaconvnet library
+                self.T *= self.cool
+                continue
 
             # keep a copy of the current network state
             network_copy = copy.deepcopy(self.network)
@@ -103,11 +110,21 @@ class SimulatedAnnealing:
             # check the network is within platform resource constraints
             if not self.network.check_constraints():
                 self.network = network_copy
+                # CRITICAL FIX: Reduce temperature even when constraints fail
+                # Otherwise temperature never decreases and optimizer runs forever
+                self.T *= self.cool
                 continue
 
 
             # log the current resources and cost
-            new_cost = self.network.eval_cost()
+            try:
+                new_cost = self.network.eval_cost()
+            except (AttributeError, ZeroDivisionError, KeyError) as e:
+                # If cost evaluation fails after transformation, reject the transformation
+                self.network = network_copy
+                self.T *= self.cool
+                continue
+                
             # new_resource = self.network.eval_resource()
             chosen = True
 
